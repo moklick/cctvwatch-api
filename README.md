@@ -1,5 +1,5 @@
 # cctvwatch-api
-An API to provide positions of cctv cameras.
+An API to provide positions of CCTV cameras.
 Right now there is only a json file that holds the data.
 A postgres db with postgis has to be added.
 
