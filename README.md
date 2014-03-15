@@ -8,12 +8,12 @@ A postgres db with postgis has to be added.
 npm install
 ```
 
-## start server
+## Start server
 ```
 npm start
 ```
 
 ### Requirements
 
-*    nodejs
+*	nodejs
 *	npm

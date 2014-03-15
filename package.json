@@ -11,8 +11,7 @@
     "type": "git",
     "url": "git://github.com/moklick/cctvwatch-api.git"
   },
-  "author": "moklick",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/moklick/cctvwatch-api/issues"
   },
