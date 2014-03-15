@@ -1,0 +1,23 @@
+{
+  "name": "cctvwatch-api",
+  "version": "0.0.1",
+  "description": "API to provide cctv camera data",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/moklick/cctvwatch-api.git"
+  },
+  "author": "moklick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moklick/cctvwatch-api/issues"
+  },
+  "homepage": "https://github.com/moklick/cctvwatch-api",
+  "dependencies": {
+    "express": "~3.4.8"
+  }
+}
