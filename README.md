@@ -13,6 +13,12 @@ npm install
 npm start
 ```
 
+## TODO's
+*	Postgres/Postgis integration
+* 	Implement bounding box method to return only points in a certain area 
+*	Implement create method
+
+
 ### Requirements
 
 *	nodejs
