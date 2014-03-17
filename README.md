@@ -14,7 +14,7 @@ npm start
 ```
 
 ## TODO's
-*	Postgres/Postgis integration
+*	Postgres/Postgis integration or mongodb
 * 	Implement bounding box method to return only points in a certain area 
 *	Implement create method
 
