@@ -16,7 +16,7 @@ sails lift
 
 ```GET``` [http://localhost:1337/cctv/](http://localhost:1337/cctv/) (**Returns all CCTV cams.**)
 
-```GET``` [http://localhost:1337/cctv/within?southwest=$lat1,$lng1&northeast=$lat2,$lng2](http://localhost:1337/cctv/within?southwest=$lat1,$lng1&northeast=$lat2,$lng2) (**Returns all CCTV cams within the given bounding box**)
+```GET``` [http://localhost:1337/cctv/within?bottomleft=$lat1,$lng1&topright=$lat2,$lng2](http://localhost:1337/cctv/within?bottomleft=$lat1,$lng1&topright=$lat2,$lng2) (**Returns all CCTV cams within the given bounding box**)
 
 ```PUT``` [http://localhost:1337/cctv/create](http://localhost:1337/cctv/) (**Creates new camera**)
 

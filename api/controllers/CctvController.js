@@ -22,30 +22,30 @@ module.exports = {
 	_config: {},
 
 	/** 
-	 * returns cctvs within the given bounding-box [southWest,northEast]
+	 * returns cctvs within the given bounding-box [bottomLeft,topLeft]
 	 * @param  Request req 
 	 * @param  Response res
 	 */
 	within: function(req, res) {
-		var	southWest = req.query.southwest,
-			northEast = req.query.northeast;
+		var	bottomLeft = req.query.bottomleft,
+			topLeft = req.query.topright;
 
 		// return 404 if query is not complete	
-		if (!southWest || !northEast) return res.send('pass points southwest and northeast.', 404);
+		if (!bottomLeft || !topLeft) return res.send('pass points southwest and northeast.', 404);
 
 		// convert from '52.23,13.23' to [52.23,13.23], we can't use split here, because we need floats
-		southWest = helper.parseLocationString(southWest);
-		northEast = helper.parseLocationString(northEast);
+		bottomLeft = helper.parseLocationString(bottomLeft);
+		topLeft = helper.parseLocationString(topLeft);
 
 		// use native mongodb query https://github.com/balderdashy/sails-mongo/issues/21#issuecomment-20765896 
 		Cctv.native(function(err, cctvCollection) {
-			// find cctvs where location within bounding-box [southWest,northEast]
+			// find cctvs where location within bounding-box [bottomLeft,topLeft]
 			cctvCollection.find({
 				location :{
 					$geoWithin: {
 						$box: [
-							southWest,
-							northEast
+							bottomLeft,
+							topLeft
 						]
 					}
 				}
