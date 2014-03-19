@@ -17,7 +17,7 @@ sails lift
 mongoimport --db cctvDb --collection cctv --type json --file testdata/cctvs.json --jsonArray
 ```
 
-The dataset contains the positions of the cctv cams in berlin. Source [http://www.openstreetmap.org/](OpenStreetMap).
+The dataset contains the locations of the CCTV cams in Berlin. Source [http://www.openstreetmap.org/](OpenStreetMap).
 
 ## API
 
