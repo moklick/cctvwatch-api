@@ -7,7 +7,7 @@ An API to provide positions of CCTV cameras.
 $ npm install
 ```
 
-### Create Database and add user
+### Create database and add user
 ```
 $ mongo
 > use cctvDb
@@ -23,7 +23,7 @@ The dataset contains the locations of the CCTV cams in Berlin. Source [http://ww
 
 ### Start server
 ```
-$ sails lift
+$ npm start
 ```
 
 <img src="http://data.moritzklack.com/cctvdestroy.gif" width="100%" alt="cctv destroy"/>
