@@ -47,11 +47,11 @@ Returns all CCTV cams as JSON. An object looks like:
   }
 ```
 
-### Get all CCTV cams within a certain bounding box
+### Get all CCTV cameras within a certain bounding box
 
 ```GET``` **cctv/within** 
 
-Returns all CCTV cams within the given bounding box as JSON like the method above.
+Returns all CCTV cameras within the given bounding box as JSON like the method above.
 
 Parameters:
 
@@ -63,6 +63,17 @@ Example:
 ```
 http://localhost:1337/cctv/within?bottomleft=52.511650,13.389573&topright=52.521887,13.416353
 ```
+
+### Update a CCTV camera
+
+```UPDATE``` **cctv/update/:id** 
+
+Updates the CCTV camera with the given id.
+
+Parameters:
+
+*   id, type: String **(required)**
+
 
 ### Store a new CCTV cam
 
