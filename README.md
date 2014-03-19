@@ -4,17 +4,17 @@ An API to provide positions of CCTV cameras.
 
 ### Installation
 ```
-npm install
+$ npm install
 ```
 
 ### Start server
 ```
-sails lift
+$ sails lift
 ```
 
 ### Import test dataset
 ```
-mongoimport --db cctvDb --collection cctv --type json --file testdata/cctvs.json --jsonArray
+$ mongoimport --db cctvDb --collection cctv --type json --file testdata/cctvs.json --jsonArray
 ```
 
 The dataset contains the locations of the CCTV cams in Berlin. Source [http://www.openstreetmap.org/](OpenStreetMap).
