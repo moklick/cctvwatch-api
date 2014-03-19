@@ -1,22 +1,22 @@
 {
   "name": "cctvwatch-api",
+  "private": true,
   "version": "0.0.1",
-  "description": "API to provide cctv camera data",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/moklick/cctvwatch-api.git"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/moklick/cctvwatch-api/issues"
-  },
-  "homepage": "https://github.com/moklick/cctvwatch-api",
+  "description": "CCTVwatch API",
   "dependencies": {
-    "express": "~3.4.8"
-  }
+    "sails": "0.9.13",
+    "grunt": "0.4.1",
+    "sails-disk": "~0.9.0",
+    "ejs": "0.8.4",
+    "optimist": "0.3.4",
+    "sails-mongo": "~0.9.7"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "debug": "node debug app.js"
+  },
+  "main": "app.js",
+  "repository": "",
+  "author": "",
+  "license": ""
 }
