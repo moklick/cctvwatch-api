@@ -10,13 +10,9 @@ npm install
 
 ## Start server
 ```
-npm start
+sails lift
 ```
 
-## TODO's
-*	Postgres/Postgis integration or mongodb
-* 	Implement bounding box method to return only points in a certain area 
-*	Implement create method
 
 
 ### Requirements
