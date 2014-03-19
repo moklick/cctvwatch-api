@@ -26,7 +26,7 @@ The dataset contains the locations of the CCTV cams in Berlin. Source [http://ww
 $ sails lift
 ```
 
-<img src="http://data.moritzklack.com/cctvdestroy.gif" alt="cctv destroy" style="width: 100%;"/>
+<img src="http://data.moritzklack.com/cctvdestroy.gif" width="100%" alt="cctv destroy"/>
 
 
 ## API
