@@ -6,20 +6,27 @@
  * @docs    :: http://sailsjs.org/#!documentation/models
  */
 
+var helper = require("../services/helper");
+
 module.exports = {
 
   attributes: {
 
     // format: [latitude,longitude]
-    location: { 
+    location: {
       type: 'array',
       array: true,
+      unique: true,
       required: true
     },
     // 'normal' or 'panorama'(360°) cam
-    model: 'string', 
+    model: 'string',
     // private or public
-    owner: 'string', 
-    angle: 'integer', 
-  }
+    owner: 'string',
+    angle: 'integer'
+  },
+  beforeValidation: function(values, cb) {
+    values.location = helper.parseLocationString(values.location);
+    cb();
+  },
 };
