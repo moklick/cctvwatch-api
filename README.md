@@ -14,6 +14,8 @@ sails lift
 
 ## API
 
+### Get all CCTV cams
+
 ```GET``` **cctv/** 
 
 Returns all CCTV cams as JSON. An object looks like:
@@ -28,6 +30,7 @@ Returns all CCTV cams as JSON. An object looks like:
   }
 ```
 
+### Get all CCTV cams in a certain bounding box
 
 ```GET``` **cctv/within** 
 
@@ -44,6 +47,7 @@ Example:
 http://localhost:1337/cctv/within?bottomleft=52.511650,13.389573&topright=52.521887,13.416353
 ```
 
+### Store a new CCTV cam
 
 ```PUT``` **cctv/create**
 
