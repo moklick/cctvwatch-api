@@ -16,7 +16,7 @@
     "debug": "node debug app.js"
   },
   "main": "app.js",
-  "repository": "",
+  "repository": "https://github.com/moklick/cctvwatch-api",
   "author": "",
-  "license": ""
+  "license": "MIT"
 }
