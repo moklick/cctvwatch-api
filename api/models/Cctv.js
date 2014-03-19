@@ -16,7 +16,6 @@ module.exports = {
     location: {
       type: 'array',
       array: true,
-      unique: true,
       required: true
     },
     // 'normal' or 'panorama'(360°) cam

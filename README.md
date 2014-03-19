@@ -14,15 +14,41 @@ sails lift
 
 ## API
 
-```GET``` [http://localhost:1337/cctv/](http://localhost:1337/cctv/) (**Returns all CCTV cams.**)
+```GET``` **cctv/** 
 
-```GET``` [http://localhost:1337/cctv/within?bottomleft=$lat1,$lng1&topright=$lat2,$lng2](http://localhost:1337/cctv/within?bottomleft=$lat1,$lng1&topright=$lat2,$lng2) (**Returns all CCTV cams within the given bounding box**)
+Returns all CCTV cams as JSON. An object looks like:
 
-```PUT``` [http://localhost:1337/cctv/create](http://localhost:1337/cctv/) (**Creates new camera**)
+```{
+    "_id": "5328ecc72c2b6354bc30358b",
+    "location": [
+      52.51606,
+      13.4023
+    ]
+  }```
+
+
+```GET``` **cctv/within** 
+
+Returns all CCTV cams within the given bounding box as JSON like the method above.
+
+Parameters:
+
+*   bottomleft, type: String **(required)**
+*   topright, type: String **(required)**
+
+```PUT``` **cctv/create**
+
+Stores a new camera object.
+
+Parameters:
+*   location, type: String **(required)**
+*   model, type: String
+*   owner, type: String
+*   angle, type: Integer
 
 
 
 ### Requirements
 
-*    nodejs
+*   nodejs
 *	npm
