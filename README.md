@@ -37,7 +37,7 @@ Returns all CCTV cams as JSON. An object looks like:
   }
 ```
 
-### Get all CCTV cams in a certain bounding box
+### Get all CCTV cams within a certain bounding box
 
 ```GET``` **cctv/within** 
 
