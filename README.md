@@ -12,6 +12,13 @@ npm install
 sails lift
 ```
 
+## Import test dataset
+```
+mongoimport --db cctvDb --collection cctv --type json --file testdata/cctvs.json --jsonArray
+```
+
+The dataset contains the positions of the cctv cams in berlin. Source [http://www.openstreetmap.org/](OpenStreetMap).
+
 ## API
 
 ### Get all CCTV cams
