@@ -7,7 +7,7 @@ An API to provide positions of CCTV cameras.
 $ npm install
 ```
 
-### Create Database and add User for Mongo
+### Create Database and add user
 ```
 $ mongo
 > use cctvDb
