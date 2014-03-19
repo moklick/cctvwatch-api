@@ -7,6 +7,13 @@ An API to provide positions of CCTV cameras.
 $ npm install
 ```
 
+### Create Database and add User for Mongo
+```
+$ mongo
+> use cctvDb
+> db.addUser('cctvAdmin', 'cctvw4tch');
+```
+
 ### Import test dataset
 ```
 $ mongoimport --db cctvDb --collection cctv --type json --file testdata/cctvs.json --jsonArray
