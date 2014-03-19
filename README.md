@@ -1,25 +1,28 @@
 # cctvwatch-api
-An API to provide positions of CCTV cameras.
-Right now there is only a json file that holds the data.
-A postgres db with postgis has to be added.
 
-## Installation
+An API to provide positions of CCTV cameras.
+
+### Installation
 ```
 npm install
 ```
 
-## Start server
+### Start server
 ```
-npm start
+sails lift
 ```
 
-## TODO's
-*	Postgres/Postgis integration or mongodb
-* 	Implement bounding box method to return only points in a certain area 
-*	Implement create method
+## API
+
+```GET``` [http://localhost:1337/cctv/](http://localhost:1337/cctv/) (**Returns all CCTV cams.**)
+
+```GET``` [http://localhost:1337/cctv/within?southwest=$lat1,$lng1&northeast=$lat2,$lng2](http://localhost:1337/cctv/within?southwest=$lat1,$lng1&northeast=$lat2,$lng2) (**Returns all CCTV cams within the given bounding box**)
+
+```PUT``` [http://localhost:1337/cctv/create](http://localhost:1337/cctv/) (**Creates new camera**)
+
 
 
 ### Requirements
 
-*	nodejs
+*    nodejs
 *	npm
