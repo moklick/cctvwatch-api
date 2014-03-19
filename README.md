@@ -18,13 +18,15 @@ sails lift
 
 Returns all CCTV cams as JSON. An object looks like:
 
-```{
+```
+{
     "_id": "5328ecc72c2b6354bc30358b",
     "location": [
       52.51606,
       13.4023
     ]
-  }```
+  }
+```
 
 
 ```GET``` **cctv/within** 
@@ -38,7 +40,9 @@ Parameters:
 
 Example:
 
-```http://localhost:1337/cctv/within?bottomleft=52.511650,13.389573&topright=52.521887,13.416353```
+```
+http://localhost:1337/cctv/within?bottomleft=52.511650,13.389573&topright=52.521887,13.416353
+```
 
 
 ```PUT``` **cctv/create**
@@ -53,7 +57,10 @@ Parameters:
 
 Example:
 
-```http://localhost:1337/cctv/create?location=52.711650,13.889573```
+```
+http://localhost:1337/cctv/create?location=52.711650,13.889573
+```
+
 
 ### Requirements
 
