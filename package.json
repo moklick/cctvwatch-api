@@ -14,7 +14,7 @@
     "JSONStream": "~0.8.0"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "sails lift",
     "debug": "node debug app.js"
   },
   "main": "app.js",

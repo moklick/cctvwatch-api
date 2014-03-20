@@ -20,7 +20,7 @@ module.exports.adapters = {
     host: 'localhost',
     port: 27017,
     user: 'cctvAdmin',
-    password: 'root',
+    password: 'cctvw4tch',
     database: 'cctvDb',
 
     schema : true // default is false because usually mongo is schemaless!
