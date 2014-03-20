@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var request = require('request'),
 	fs = require('fs'),
 	path = require('path'),
@@ -18,3 +19,5 @@ request({url: baseURL + queryURL + query})
     .pipe(JSONStream.stringify(false))
     // write to the filesystem
     .pipe(fs.createWriteStream(path.resolve(__dirname, '..', '..', 'data', 'data.json')));
+
+console.log("Saved!");
