@@ -26,7 +26,7 @@ The dataset contains the locations of the CCTV cams in Berlin. Source [http://ww
 $ npm start
 ```
 
-<img src="http://data.moritzklack.com/cctvdestroy.gif" width="100%" alt="cctv destroy"/>
+<img src="http://data.moritzklack.com/cctv.jpg" width="100%" alt="cctv destroy"/>
 
 
 ## API
