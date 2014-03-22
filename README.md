@@ -95,3 +95,4 @@ http://localhost:1337/cctv/create?location=52.711650,13.889573
 
 *   nodejs
 *   npm
+*   mongodb (version >= 2.4)
