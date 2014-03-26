@@ -26,7 +26,7 @@ module.exports = {
   }
 
   /*  we don't need this anymore
-  ,beforeValidation: function(values, cb) {
+  beforeValidation: function(values, cb) {
     console.log(values);
     values.location = helper.parseLocationString(values.location);
     cb();
