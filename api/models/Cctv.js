@@ -23,9 +23,13 @@ module.exports = {
     // private or public
     owner: 'string',
     angle: 'integer'
-  },
-  beforeValidation: function(values, cb) {
+  }
+
+  /*  we don't need this anymore
+  ,beforeValidation: function(values, cb) {
+    console.log(values);
     values.location = helper.parseLocationString(values.location);
     cb();
-  },
+  }
+  */
 };
