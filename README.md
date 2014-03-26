@@ -26,9 +26,6 @@ The dataset contains the locations of the CCTV cams in Berlin. Source [http://ww
 $ npm start
 ```
 
-<img src="http://data.moritzklack.com/cctvdestroy.gif" width="100%" alt="cctv destroy"/>
-
-
 ## API
 
 ### Get all CCTV cams
@@ -98,3 +95,4 @@ http://localhost:1337/cctv/create?location=52.711650,13.889573
 
 *   nodejs
 *   npm
+*   mongodb (version >= 2.4)
