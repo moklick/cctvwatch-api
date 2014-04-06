@@ -28,6 +28,7 @@ module.exports = {
     angle: 'integer',
     url: 'url',
     category: 'string',
-    fixme: 'boolean'
+    fixme: 'boolean',
+    osmID: 'integer'
   }
 };
