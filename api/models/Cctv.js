@@ -6,8 +6,6 @@
  * @docs    :: http://sailsjs.org/#!documentation/models
  */
 
-var helper = require("../services/helper");
-
 module.exports = {
 
   attributes: {
