@@ -14,13 +14,6 @@ $ mongo
 > db.addUser('cctvAdmin', 'cctvw4tch');
 ```
 
-### Import test dataset
-```
-$ mongoimport --db cctvDb --collection cctv --type json --file testdata/cctvs.json --jsonArray
-```
-
-The dataset contains the locations of the CCTV cams in Berlin. Source [http://www.openstreetmap.org/](OpenStreetMap).
-
 ### Start server
 ```
 $ npm start
