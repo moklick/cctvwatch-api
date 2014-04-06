@@ -12,7 +12,11 @@
     "sails-mongo": "~0.9.7",
     "request": "~2.34.0",
     "JSONStream": "~0.8.0",
-    "mongodb": "~1.3.23"
+    "mongodb": "~1.3.23",
+    "passport": "~0.2.0",
+    "passport-facebook": "~1.0.3",
+    "passport-github": "~0.1.5",
+    "passport-google-oauth": "~0.1.5"
   },
   "config": {
     "adapter": {
@@ -20,7 +24,18 @@
       "port": 27017,
       "user": "cctv",
       "password": "cctv_t3st",
-      "database": "cctv"
+      "database": "cctv",
+      "sessionDatabase": "cctv_sessions",
+      "sessionCollection": "sessions"
+    },
+    "auth": {
+      "hostname": "localhost",
+      "github_client": "ID",
+      "github_secret": "SECRET",
+      "google_client": "ID",
+      "google_secret": "SECRET",
+      "facebook_client": "ID",
+      "facebook_secret": "SECRET"
     },
     "bbox": {
       "lat1": 52.505407689237956,
