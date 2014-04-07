@@ -46,8 +46,7 @@
     }
   },
   "scripts": {
-    "start": "sails lift",
-    "sync": "node api/services/fetchData.js"
+    "start": "sails lift"
   },
   "main": "app.js",
   "repository": "https://github.com/moklick/cctvwatch-api",
