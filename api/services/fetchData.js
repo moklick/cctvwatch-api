@@ -22,12 +22,16 @@ var writeData = function(data) {
 					(typeof data.tags !== 'undefined');
 
 	if (isValidData) {
+		// TODO: Explore more fields from the OSM API
 		var entry = {
 				location: [parseFloat(lat.toFixed(6)), parseFloat(lng.toFixed(6))],
 				name: data.tags.name,
 				description: data.tags.description,
-				url: data.tags.webcam,
-				osmID: data.id
+				url: data.tags['url:webcam'] || data.tags.webcam || data.tags.website,
+				type: data.tags.surveillance,
+				operator: data.tags.operator,
+				osmID: data.id,
+				fixme: (typeof data.tags.fixme !== 'undefined') ? true : null
 			};
 
 		entry = _.omit(entry, function(value) {
