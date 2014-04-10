@@ -15,8 +15,6 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
-var helper = require('../services/helper');
-
 module.exports = {
 
 	_config: {},
@@ -34,8 +32,8 @@ module.exports = {
 		if (!bottomLeft || !topRight) return res.send('pass points southwest and northeast.', 404);
 
 		// convert from '52.23,13.23' to [52.23,13.23], we can't use split here, because we need floats
-		bottomLeft = helper.parseLocationString(bottomLeft);
-		topRight = helper.parseLocationString(topRight);
+		bottomLeft = LocationHelper.parseLocationString(bottomLeft);
+		topRight = LocationHelper.parseLocationString(topRight);
 
 		// use native mongodb query https://github.com/balderdashy/sails-mongo/issues/21#issuecomment-20765896 
 		Cctv.native(function(err, cctvCollection) {
