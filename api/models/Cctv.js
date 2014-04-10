@@ -30,5 +30,9 @@ module.exports = {
     category: 'string',
     fixme: 'boolean',
     osmID: 'integer'
-  }
+  }, 
+  beforeValidation: function(values, cb) {
+    values.location = LocationHelper.parseLocationString(values.location);
+    cb();
+  },
 };
