@@ -40,10 +40,10 @@ var writeData = function(data) {
 
 		Cctv.find({'osmID': entry.osmID}).done(function(err, cctv) {
 			if (err) {
-				return console.log(err);
+				return sails.log.error(err);
 			} else if (cctv.length === 0) {
 				Cctv.create(entry, function(err, cctv) {
-				  if (err) return console.log(err);
+				  if (err) return sails.log.error(err);
 				});
 			}
 		});
@@ -66,5 +66,5 @@ request({url: baseURL + queryURL + query})
 	.pipe(writeStream);
 
 writeStream.on('close', function(){
-	console.info('OSM data synced !');
+	sails.log.info('OSM data synced !');
 });
