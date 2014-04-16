@@ -23,9 +23,9 @@
     "adapter": {
       "host": "localhost",
       "port": 27017,
-      "user": "cctv",
-      "password": "cctv_t3st",
-      "database": "cctv",
+      "user": "cctvAdmin",
+      "password": "cctvw4tch",
+      "database": "cctvDb",
       "sessionDatabase": "cctv_sessions",
       "sessionCollection": "sessions"
     },
