@@ -2,9 +2,9 @@
   "name"       : "cctv-api",
   "script"     : "./app.js",
   "instances"  : "4",
-  "error_file" : "./child-err.log",
-  "out_file"   : "./child-out.log",
-  "pid_file"   : "./child.pid",
+  "error_file" : "./logs/child-err.log",
+  "out_file"   : "./logs/child-out.log",
+  "pid_file"   : "./logs/child.pid",
   "exec_mode"  : "cluster_mode",
   "port"       : 64223
 }]
