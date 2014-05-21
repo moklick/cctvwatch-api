@@ -27,7 +27,7 @@
       "user": "cctvAdmin",
       "password": "cctvw4tch",
       "database": "cctvDb",
-      "sessionDatabase": "cctv_sessions",
+      "sessionDatabase": "cctvDb",
       "sessionCollection": "sessions"
     },
     "auth": {
@@ -49,7 +49,7 @@
   "scripts": {
     "start": "sails lift",
     "production": "pm2 start processes.json",
-    "stop-server": "pm2 stop processes.json",
+    "stop-server": "pm2 delete processes.json",
     "restart-server": "pm2 restart processes.json"
   },
   "main": "app.js",

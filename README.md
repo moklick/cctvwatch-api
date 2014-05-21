@@ -19,6 +19,14 @@ $ mongo
 $ npm start
 ```
 
+### Start the production server
+```
+$ npm run production
+$ npm run stop-server
+$ npm run restart-server
+```
+
+
 ## API
 
 ### Get all CCTV cams
