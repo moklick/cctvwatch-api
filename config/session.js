@@ -40,14 +40,7 @@ module.exports.session = {
   // adapter: 'mongo',
   //
 
-  adapter: 'mongo',
-
-  host: pkg.config.adapter.host,
-  port: pkg.config.adapter.port,
-  user: pkg.config.adapter.user,
-  password: pkg.config.adapter.password,
-  db: pkg.config.adapter.sessionDatabase,
-  collection: pkg.config.adapter.sessionCollection,
+  adapter: 'memory',
 
   cookie: {
     originalMaxAge: 900000 // 15 min
