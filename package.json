@@ -23,11 +23,11 @@
   "config": {
     "adapter": {
       "host": "localhost",
-      "port": 27017,
+      "port": 20530,
       "user": "cctvAdmin",
       "password": "cctvw4tch",
       "database": "cctvDb",
-      "sessionDatabase": "cctvDb",
+      "sessionDatabase": "cctv_sessions",
       "sessionCollection": "sessions"
     },
     "auth": {
