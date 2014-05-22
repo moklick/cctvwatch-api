@@ -2,7 +2,7 @@
 
 An API to provide positions of CCTV cameras.
 
-### Installation
+## Installation
 ```
 $ npm install
 ```
@@ -13,17 +13,22 @@ $ mongo
 > use cctvDb
 > db.addUser('cctvAdmin', 'cctvw4tch');
 ```
+### Configure
+Edit ```package.json``` with your own config.
+
 
 ### Start server
+In the project folder run:
 ```
 $ npm start
 ```
 
 ### Start the production server
+In the project folder run:
 ```
-$ npm run production
+$ npm run production 
 $ npm run stop-server
-$ npm run restart-server
+$ npm run restart-server    # with 0ms downtime!!!
 ```
 
 
@@ -62,7 +67,7 @@ Example:
 http://localhost:1337/cctv/within?bottomleft=52.511650,13.389573&topright=52.521887,13.416353
 ```
 
-### Update a CCTV camera
+### Update a CCTV camera (login required)
 
 ```UPDATE``` **cctv/update/:id** 
 
@@ -73,17 +78,25 @@ Parameters:
 *   id, type: String **(required)**
 
 
-### Store a new CCTV cam
+### Store a new CCTV cam (login required)
 
 ```PUT``` **cctv/create**
 
 Stores a new camera object.
 
 Parameters:
-*   location, type: String **(required)**
-*   model, type: String
-*   owner, type: String
-*   angle, type: Integer
+*   name: String
+*   description: String
+*   location, type: String **(required)** // format: [latitude,longitude]
+*   type: String
+*   model: String
+*   note:  String
+*   operator: String
+*   angle: Integer
+*   url: URL
+*   category: String
+*   fixme: Boolean
+*   osmID: Integer
 
 Example:
 
