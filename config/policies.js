@@ -10,14 +10,18 @@
  * For more information on policies, check out:
  * http://sailsjs.org/#documentation
  */
-
+var authConstrain = 'isAuthenticated';
 
 module.exports.policies = {
 
   // Default policy for all controllers and actions
   // (`true` allows public access) 
   'home': 'isAuthenticated',
-
+  'cctv': {
+  	'create': authConstrain,
+  	'destroy': authConstrain,
+  	'update': authConstrain
+  },
   'auth': {
     '*': true
   }
