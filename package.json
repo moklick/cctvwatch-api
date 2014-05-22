@@ -50,7 +50,7 @@
     "start": "sails lift",
     "production": "pm2 start processes.json",
     "stop-server": "pm2 delete processes.json",
-    "restart-server": "pm2 restart processes.json"
+    "restart-server": "pm2 reload all"
   },
   "main": "app.js",
   "repository": "https://github.com/moklick/cctvwatch-api",
