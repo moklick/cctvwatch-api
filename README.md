@@ -15,6 +15,10 @@ $ mongo
 ```
 ### Configure
 Edit ```package.json``` with your own config.
+In particular the following settings:
+- mongodb **user**, **pass**, db **name**, **port**
+- OAuth **hostname**, github **id**, github **secret** and other OAuth providers config
+- sessions secret
 
 
 ### Start server
