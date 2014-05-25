@@ -10,14 +10,14 @@
  * http://sailsjs.org/#documentation
  */
 var path = require("path"),
-    pkg = require(path.resolve(__dirname, '..', 'package.json'));
+    config = require(path.resolve(__dirname, '..', 'api', 'services', 'ConfigManager')).getConfig();
 
 module.exports.session = {
 
   // Session secret is automatically generated when your new app is created
   // Replace at your own risk in production-- you will invalidate the cookies of your users,
   // forcing them to log in again. 
-  secret: '8775d44d9fa0161141e6027563ee31ad',
+  secret: config.auth.sessions_secret,
 
 
   // In production, uncomment the following lines to set up a shared redis session store

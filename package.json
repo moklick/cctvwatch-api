@@ -31,6 +31,8 @@
       "sessionCollection": "sessions"
     },
     "auth": {
+      "enabled": true,
+      "sessions_secret": "8775d44d9fa0161141e6027563ee31ad",
       "hostname": "localhost",
       "github_client": "ID",
       "github_secret": "SECRET",
