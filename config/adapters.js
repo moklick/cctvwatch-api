@@ -11,19 +11,19 @@
  * For more information on adapter configuration, check out:
  * http://sailsjs.org/#documentation
  */
-var path = require("path"),
-    pkg = require(path.resolve(__dirname, '..', 'package.json'));
+var path = require('path'),
+    config = require(path.resolve(__dirname, '..', 'api', 'services', 'ConfigManager')).getConfig();
 
 module.exports.adapters = {
   'default': 'mongo',
 
   mongo: {
     module: 'sails-mongo',
-    host: pkg.config.adapter.host,
-    port: pkg.config.adapter.port,
-    user: pkg.config.adapter.user,
-    password: pkg.config.adapter.password,
-    database: pkg.config.adapter.database,
+    host: config.adapter.host,
+    port: config.adapter.port,
+    user: config.adapter.user,
+    password: config.adapter.password,
+    database: config.adapter.database,
 
     schema : true // default is false because usually mongo is schemaless!
   }

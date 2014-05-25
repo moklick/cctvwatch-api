@@ -3,7 +3,7 @@ var passport = require('passport'),
     FacebookStrategy = require('passport-facebook').Strategy,
     GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
     path = require("path"),
-    pkg = require(path.resolve(__dirname, '..', 'package.json'));
+    config = require(path.resolve(__dirname, '..', 'api', 'services', 'ConfigManager')).getConfig();
 
 
 var verifyHandler = function (token, tokenSecret, profile, done) {
@@ -61,25 +61,25 @@ module.exports = {
         customMiddleware: function (app) {
 
             passport.use(new GitHubStrategy({
-                    clientID: pkg.config.auth.github_client,
-                    clientSecret: pkg.config.auth.github_secret,
-                    callbackURL: "http://" + pkg.config.auth.hostname + "/auth/github/callback"
+                    clientID: config.auth.github_client,
+                    clientSecret: config.auth.github_secret,
+                    callbackURL: "http://" + config.auth.hostname + "/auth/github/callback"
                 },
                 verifyHandler
             ));
 
             passport.use(new FacebookStrategy({
-                    clientID: pkg.config.auth.facebook_client,
-                    clientSecret: pkg.config.auth.facebook_secret,
-                    callbackURL: "http://" + pkg.config.auth.hostname + "/auth/facebook/callback"
+                    clientID: config.auth.facebook_client,
+                    clientSecret: config.auth.facebook_secret,
+                    callbackURL: "http://" + config.auth.hostname + "/auth/facebook/callback"
                 },
                 verifyHandler
             ));
 
             passport.use(new GoogleStrategy({
-                    clientID: pkg.config.auth.google_client,
-                    clientSecret: pkg.config.auth.google_secret,
-                    callbackURL: "http://" + pkg.config.auth.hostname + "auth/google/callback"
+                    clientID: config.auth.google_client,
+                    clientSecret: config.auth.google_secret,
+                    callbackURL: "http://" + config.auth.hostname + "auth/google/callback"
                 },
                 verifyHandler
             ));

@@ -43,6 +43,7 @@ nbproject
 # local config
 ########################
 config/local.js
+local-config.json
 
 ########################
 # local data

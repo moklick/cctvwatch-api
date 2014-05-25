@@ -7,11 +7,11 @@ var request = require('request'),
 	JSONStream = require('JSONStream'),
 	es = require('event-stream'),
 	writeStream = fs.createWriteStream(path.resolve(__dirname, '..', '..', 'data', 'data.json')),
-	pkg = require(path.resolve(__dirname, '..', '..', 'package.json'));
+    config = require(path.resolve(__dirname, 'ConfigManager')).getConfig();
 
 var baseURL = 'http://overpass-api.de/',
 	queryURL = 'api/interpreter?data=',
-	query = '<osm-script output="json"> <union> <query type="node"> <has-kv k="man_made" v="surveillance"/> <bbox-query s="' + pkg.config.bbox.lat1 + '" w="' + pkg.config.bbox.lon1 + '" n="' + pkg.config.bbox.lat2 + '" e="' + pkg.config.bbox.lon2 + '"/> </query> <query type="way"> <has-kv k="man_made" v="surveillance"/> <bbox-query s="' + pkg.config.bbox.lat1 + '" w="' + pkg.config.bbox.lon1 + '" n="' + pkg.config.bbox.lat2 + '" e="' + pkg.config.bbox.lon2 + '"/> </query> <query type="relation"> <has-kv k="man_made" v="surveillance"/> <bbox-query s="' + pkg.config.bbox.lat1 + '" w="' + pkg.config.bbox.lon1 + '" n="' + pkg.config.bbox.lat2 + '" e="' + pkg.config.bbox.lon2 + '"/> </query> </union> <print mode="body"/> <recurse type="down"/> <print mode="skeleton"/> </osm-script>';
+	query = '<osm-script output="json"> <union> <query type="node"> <has-kv k="man_made" v="surveillance"/> <bbox-query s="' + config.bbox.lat1 + '" w="' + config.bbox.lon1 + '" n="' + config.bbox.lat2 + '" e="' + config.bbox.lon2 + '"/> </query> <query type="way"> <has-kv k="man_made" v="surveillance"/> <bbox-query s="' + config.bbox.lat1 + '" w="' + config.bbox.lon1 + '" n="' + config.bbox.lat2 + '" e="' + config.bbox.lon2 + '"/> </query> <query type="relation"> <has-kv k="man_made" v="surveillance"/> <bbox-query s="' + config.bbox.lat1 + '" w="' + config.bbox.lon1 + '" n="' + config.bbox.lat2 + '" e="' + config.bbox.lon2 + '"/> </query> </union> <print mode="body"/> <recurse type="down"/> <print mode="skeleton"/> </osm-script>';
 
 
 var writeData = function(data) {
