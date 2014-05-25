@@ -13,13 +13,30 @@ $ mongo
 > use cctvDb
 > db.addUser('cctvAdmin', 'cctvw4tch');
 ```
+
 ### Configure
-Edit ```package.json``` with your own config.
-In particular the following settings:
+Copy the config-sections that you will edit from ```package.json``` to ```local-config.json``` in order to overwrite the global config with your local settings.
+Pay particular attention to the following settings:
 - mongodb **user**, **pass**, db **name**, **port**
 - OAuth **hostname**, github **id**, github **secret** and other OAuth providers config
 - sessions secret
 
+>This is how an example of **development-friendly** ```local-config.json``` will looks like:
+```
+{
+  "config": {
+    "adapter": {
+      "port": 27017,
+      "user": "cctv",
+      "password": "w4tch"
+    },
+    "auth": {
+      "enabled": false
+    }
+  }
+}
+```
+Just write it into the project root folder.
 
 ### Start server
 In the project folder run:
