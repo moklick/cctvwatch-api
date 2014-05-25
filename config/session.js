@@ -43,7 +43,7 @@ module.exports.session = {
   adapter: 'memory',
 
   cookie: {
-    originalMaxAge: 900000 // 15 min
+    originalMaxAge: config.auth.sessions_age // 15 min
   }
   // host: 'localhost',
   // port: 27017,

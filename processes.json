@@ -1,7 +1,7 @@
 [{
   "name"       : "cctv-api",
   "script"     : "./app.js",
-  "instances"  : "1",
+  "instances"  : "4",
   "error_file" : "./logs/child-err.log",
   "out_file"   : "./logs/child-out.log",
   "pid_file"   : "./logs/child.pid",
