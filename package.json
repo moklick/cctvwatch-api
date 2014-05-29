@@ -18,7 +18,8 @@
     "passport-github": "~0.1.5",
     "passport-google-oauth": "~0.1.5",
     "lodash": "~2.4.1",
-    "pm2": "^0.8.11"
+    "pm2": "^0.8.11",
+    "passport-twitter": "^1.0.2"
   },
   "config": {
     "adapter": {

@@ -86,12 +86,13 @@ module.exports = {
             ));
 
             passport.use(new TwitterStrategy({
-                    clientID: config.auth.twitter_client,
-                    clientSecret: config.auth.twitter_secret,
+                    consumerKey: config.auth.twitter_client,
+                    consumerSecret: config.auth.twitter_secret,
                     callbackURL: "http://" + config.auth.hostname + "auth/twitter/callback"
                 },
                 verifyHandler
             ));
+
             app.use(passport.initialize());
             app.use(passport.session());
         }
