@@ -7,7 +7,7 @@
  */
 
 module.exports = {
-
+  connection: ['mongo'],
   attributes: {
 
     name: 'string',
@@ -31,7 +31,7 @@ module.exports = {
     fixme: 'boolean',
     osmID: 'integer'
   }, 
-  beforeValidation: function(values, cb) {
+  beforeValidate: function(values, cb) {
     values.location = LocationHelper.parseLocationString(values.location);
     cb();
   },

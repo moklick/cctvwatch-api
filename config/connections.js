@@ -14,8 +14,7 @@
 var path = require('path'),
     config = require(path.resolve(__dirname, '..', 'api', 'services', 'ConfigManager')).getConfig();
 
-module.exports.adapters = {
-  'default': 'mongo',
+module.exports.connections = {
 
   mongo: {
     module: 'sails-mongo',

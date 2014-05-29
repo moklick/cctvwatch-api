@@ -38,7 +38,7 @@ var writeData = function(data) {
 			return value === undefined;
 	    });
 
-		Cctv.find({'osmID': entry.osmID}).done(function(err, cctv) {
+		Cctv.find({'osmID': entry.osmID}).exec(function(err, cctv) {
 			if (err) {
 				return sails.log.error(err);
 			} else if (cctv.length === 0) {

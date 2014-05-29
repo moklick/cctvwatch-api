@@ -9,7 +9,7 @@
 module.exports = {
 
 	// validation ?
-
+	connection: ['mongo'],
     attributes	: {
         provider: 'string',
         uid: 'integer',
