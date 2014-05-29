@@ -40,7 +40,9 @@
       "google_client": "ID",
       "google_secret": "SECRET",
       "facebook_client": "ID",
-      "facebook_secret": "SECRET"
+      "facebook_secret": "SECRET",
+      "twitter_client": "ID",
+      "twitter_secret": "SECRET"
     },
     "bbox": {
       "lat1": 52.505407689237956,
