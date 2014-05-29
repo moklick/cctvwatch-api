@@ -9,11 +9,11 @@ module.exports = {
 				_ = require('lodash');
 
 			_.forIn(config, function(value, key) {
-				config[key] = _.defaults(local[key], config[key]);
+				if (local[key])	config[key] = _.defaults(local[key], config[key]);
 			});
 			
 		} catch (e) {
-			console.log(e);
+			console.error(e);
 		}
 
 		return config;
