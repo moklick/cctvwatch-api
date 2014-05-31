@@ -18,7 +18,6 @@ module.exports.policies = {
 
   // Default policy for all controllers and actions
   // (`true` allows public access) 
-  'home': 'isAuthenticated',
   'cctv': {
   	'create': authConstrain,
   	'destroy': authConstrain,
