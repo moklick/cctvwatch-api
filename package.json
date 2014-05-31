@@ -53,7 +53,7 @@
     }
   },
   "scripts": {
-    "start": "sails lift",
+    "start": "node app",
     "production": "pm2 start processes.json",
     "stop-server": "pm2 delete processes.json",
     "restart-server": "pm2 reload all"
