@@ -10,29 +10,34 @@ module.exports = {
   connection: ['mongo'],
   attributes: {
 
-    name: 'string',
-    description: 'string',
+    name: {type: 'string'},
+    description: {type: 'string'},
     // format: [latitude,longitude]
-    location: {
-      type: 'array',
-      array: true,
+    lat: {
+      type: 'float',
       required: true
     },
-    note: 'string',
+    lng: {
+      type: 'float',
+      required: true
+    },
+    location: function() {
+      return [this.lat, this.lng];
+    },
+    note: {type: 'string'},
     // indoor, outdoor or webcam
-    type: 'string',
+    type: {
+      type: 'string',
+      enum: ['indoor', 'outdoor', 'webcam']
+    },
     // 'normal' or 'panorama'(360°) cam
-    model: 'string',
+    model: {type: 'string'},
     // private or public
-    operator: 'string',
-    angle: 'integer',
-    url: 'url',
-    category: 'string',
-    fixme: 'boolean',
-    osmID: 'integer'
-  }, 
-  beforeValidate: function(values, cb) {
-    values.location = LocationHelper.parseLocationString(values.location);
-    cb();
-  },
+    operator: {type: 'string'},
+    angle: {type: 'integer'},
+    url: {type: 'url'},
+    category: {type: 'string'},
+    fixme: {type: 'boolean'},
+    osmID: {type: 'integer'}
+  }
 };
