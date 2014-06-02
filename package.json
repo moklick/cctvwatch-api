@@ -22,6 +22,8 @@
     "passport-twitter": "^1.0.2"
   },
   "config": {
+    "production": false,
+    "port": 1337,
     "adapter": {
       "host": "localhost",
       "port": 20530,
