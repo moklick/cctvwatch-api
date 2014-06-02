@@ -14,7 +14,7 @@ var baseURL = 'http://overpass-api.de/',
 	query = '<osm-script output="json"> <union> <query type="node"> <has-kv k="man_made" v="surveillance"/> <bbox-query s="' + config.bbox.lat1 + '" w="' + config.bbox.lon1 + '" n="' + config.bbox.lat2 + '" e="' + config.bbox.lon2 + '"/> </query> <query type="way"> <has-kv k="man_made" v="surveillance"/> <bbox-query s="' + config.bbox.lat1 + '" w="' + config.bbox.lon1 + '" n="' + config.bbox.lat2 + '" e="' + config.bbox.lon2 + '"/> </query> <query type="relation"> <has-kv k="man_made" v="surveillance"/> <bbox-query s="' + config.bbox.lat1 + '" w="' + config.bbox.lon1 + '" n="' + config.bbox.lat2 + '" e="' + config.bbox.lon2 + '"/> </query> </union> <print mode="body"/> <recurse type="down"/> <print mode="skeleton"/> </osm-script>';
 
 
-var writeData = function(data) {
+function writeData(data) {
 	var lat = data.lat,
 		lng = data.lon,
 		isValidData = (typeof lat !== 'undefined' && lat !== '') &&
@@ -25,6 +25,8 @@ var writeData = function(data) {
 		// TODO: Explore more fields from the OSM API
 		var entry = {
 				location: [parseFloat(lat.toFixed(6)), parseFloat(lng.toFixed(6))],
+				lat: lat.toFixed(6),
+				lng: lng.toFixed(6),
 				name: data.tags.name,
 				description: data.tags.description,
 				url: data.tags['url:webcam'] || data.tags.webcam || data.tags.website,
@@ -56,14 +58,16 @@ function tap() {
 	return es.through(writeData);
 }
 
-request({url: baseURL + queryURL + query})
-	// parse interesting elements
-	.pipe(JSONStream.parse('elements.*'))
-	.pipe(tap())
-	// write back to string
-	.pipe(JSONStream.stringify(false))
-	// write to the filesystem
-	.pipe(writeStream);
+module.exports.fetch = function() {
+	request({url: baseURL + queryURL + query})
+		// parse interesting elements
+		.pipe(JSONStream.parse('elements.*'))
+		.pipe(tap())
+		// write back to string
+		.pipe(JSONStream.stringify(false))
+		// write to the filesystem
+		.pipe(writeStream);
+}
 
 writeStream.on('close', function(){
 	sails.log.info('OSM data synced !');

@@ -12,5 +12,11 @@ module.exports.bootstrap = function (cb) {
 
   // It's very important to trigger this callack method when you are finished 
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
-  cb();
+	Cctv.native(function(err, collection) {
+		// define index properties
+		collection.ensureIndex({'location': '2d'}, function() {
+			osm.fetch();
+			cb();
+		});
+	});
 };
