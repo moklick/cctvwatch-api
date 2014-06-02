@@ -15,6 +15,7 @@
 
 module.exports.blueprints = {
 
+  defaultLimit: Number.MAX_VALUE,
 
   /**
    * NOTE:
@@ -105,7 +106,7 @@ module.exports.blueprints = {
   // `DELETE /api/v2/foo/:id`
   //
   // By default, no prefix is used.
-  prefix: '',
+  prefix: '/api/v1',
 
 
 
@@ -119,7 +120,5 @@ module.exports.blueprints = {
   // PUT    /foos/:id?
   // DELETE /foos/:id?
   pluralize: false,
-
-  defaultLimit: Number.MAX_VALUE
 
 };
