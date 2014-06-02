@@ -18,13 +18,14 @@ module.exports.policies = {
 
   // Default policy for all controllers and actions
   // (`true` allows public access) 
+  '*': authConstrain,
   'cctv': {
-  	'create': authConstrain,
-  	'destroy': authConstrain,
-  	'update': authConstrain
+  	'find': true,
+  	'within': true
   },
   'auth': {
-    '*': true
+    '*': true,
+    'token': authConstrain
   }
   /*
 	// Here's an example of adding some policies to a controller

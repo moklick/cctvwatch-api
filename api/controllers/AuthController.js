@@ -19,6 +19,12 @@ var passport = require('passport');
 
 module.exports = {
 
+    token: function(req, res) {
+        res.json({
+            _csrf: res.locals._csrf
+        });
+    },
+
     logout: function (req, res) {
         req.logout();
         res.redirect('/');
@@ -83,7 +89,9 @@ module.exports = {
     * Overrides for the settings in `config/controllers.js`
     * (specific to AuthController)
     */
-    _config: {}
+    _config: {
+          prefix: ''
+    }
 
 
 };

@@ -37,4 +37,7 @@
  * http://en.wikipedia.org/wiki/Cross-site_request_forgery
  */
 
-module.exports.csrf = true;
+module.exports.csrf = {
+    grantTokenViaAjax: false,
+    protectionEnabled: true
+};
