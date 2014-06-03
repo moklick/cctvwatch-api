@@ -15,7 +15,7 @@ var verifyHandler = function (token, tokenSecret, profile, done) {
                     {uid: profile.id}
                 ]
             }
-        ).done(function (err, user) {
+        ).exec(function (err, user) {
                 if (user) {
                     return done(null, user);
                 } else {
@@ -36,7 +36,7 @@ var verifyHandler = function (token, tokenSecret, profile, done) {
                         data.lastname = profile.name.familyName;
                     }
 
-                    User.create(data).done(function (err, user) {
+                    User.create(data).exec(function (err, user) {
                             return done(err, user);
                         });
                 }
@@ -49,7 +49,7 @@ passport.serializeUser(function (user, done) {
 });
 
 passport.deserializeUser(function (uid, done) {
-    User.findOne({uid: uid}).done(function (err, user) {
+    User.findOne({uid: uid}).exec(function (err, user) {
         done(err, user)
     });
 });
@@ -80,7 +80,7 @@ module.exports = {
             passport.use(new GoogleStrategy({
                     clientID: config.auth.google_client,
                     clientSecret: config.auth.google_secret,
-                    callbackURL: "http://" + config.auth.hostname + "auth/google/callback"
+                    callbackURL: "http://" + config.auth.hostname + "/auth/google/callback"
                 },
                 verifyHandler
             ));
@@ -88,7 +88,7 @@ module.exports = {
             passport.use(new TwitterStrategy({
                     consumerKey: config.auth.twitter_client,
                     consumerSecret: config.auth.twitter_secret,
-                    callbackURL: "http://" + config.auth.hostname + "auth/twitter/callback"
+                    callbackURL: "http://" + config.auth.hostname + "/auth/twitter/callback"
                 },
                 verifyHandler
             ));
