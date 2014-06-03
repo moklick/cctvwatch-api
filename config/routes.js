@@ -33,12 +33,12 @@ module.exports.routes = {
   // 
   // (This would also work if you had a file at: `/views/home.ejs`)
 
-  '/token': {
+  '/auth/token': {
     controller: 'auth',
     action: 'token'
   },
 
-  '/logout': {
+  '/auth/logout': {
     controller: 'auth',
     action: 'logout'
   },
