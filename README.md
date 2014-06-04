@@ -57,59 +57,85 @@ $ npm run restart-server    # with 0ms downtime!!!
 
 ### Get all CCTV cams
 
-```GET``` **cctv/** 
+```GET``` **api/v1/cctv/** 
 
 Returns all CCTV cams as JSON. An object looks like:
 
 ```
 {
-    "_id": "5328ecc72c2b6354bc30358b",
-    "location": [
-      52.51606,
-      13.4023
-    ]
-  }
+  "lat": 52.505742,
+  "lng": 13.374043,
+  "type": "indoor",
+  "operator": "Volksbank",
+  "osmID": 380497982,
+  "fixme": null,
+  "createdAt": "2014-06-02T23:45:57.316Z",
+  "updatedAt": "2014-06-02T23:45:57.328Z",
+  "id": "538d0cb58fecb45e3819b193"
+}
 ```
 
 ### Get all CCTV cameras within a certain bounding box
 
-```GET``` **cctv/within** 
+```GET``` **api/v1/cctv/within** 
 
 Returns all CCTV cameras within the given bounding box as JSON like the method above.
 
 Parameters:
 
-*   bottomleft, type: String **(required)**
-*   topright, type: String **(required)**
+*   north: 'float' **(required)**
+*   south: 'float' **(required)**
+*   west: 'float' **(required)**
+*   east: 'float' **(required)**
 
 Example:
 
 ```
-http://localhost:1337/cctv/within?bottomleft=52.511650,13.389573&topright=52.521887,13.416353
+http://localhost:1337/api/v1/cctv/within?north=52.511650&west=13.389573&south=52.521887&east=13.416353
+```
+
+### Get all CCTV cameras near a certain point
+
+```GET``` **api/v1/cctv/near** 
+
+Returns all CCTV cameras nearby.
+
+Parameters:
+
+*   lat: 'float' **(required)**
+*   lng: 'float' **(required)**
+*   maxDistance: 'integer' // in meters
+
+
+Example:
+
+```
+http://localhost:1337/api/v1/cctv/near?lat=52.511650&lng=13.389573
 ```
 
 ### Update a CCTV camera (login required)
 
-```UPDATE``` **cctv/update/:id** 
+```UPDATE``` **api/v1/cctv/update/:id** 
 
 Updates the CCTV camera with the given id.
 
 Parameters:
 
-*   id, type: String **(required)**
+*   id: 'String' **(required)**
 
 
 ### Store a new CCTV cam (login required)
 
-```PUT``` **cctv/create**
+```PUT``` **api/v1/cctv/create**
 
 Stores a new camera object.
 
 Parameters:
 *   name: String
 *   description: String
-*   location, type: String **(required)** // format: [latitude,longitude]
-*   type: String
+*   lat: float **(required)**
+*   lng: float **(required)**
+*   type: String [indoor, outdoor, webcam]
 *   model: String
 *   note:  String
 *   operator: String
@@ -118,15 +144,19 @@ Parameters:
 *   category: String
 *   fixme: Boolean
 *   osmID: Integer
+*   location: array **automatically created** [lat, lng]
+
 
 Example:
 
 ```
-http://localhost:1337/cctv/create?location=52.711650,13.889573
+http://localhost:1337/api/v1/cctv/create?location=52.711650,13.889573
 ```
 
+## Authentification process
+  TODO
 
-### Requirements
+## Requirements
 
 *   nodejs
 *   npm
