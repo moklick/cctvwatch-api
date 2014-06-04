@@ -29,7 +29,7 @@ module.exports = {
     // indoor, outdoor or webcam
     type: {
       type: 'string',
-      enum: ['indoor', 'outdoor', 'webcam']
+      enum: ['indoor', 'outdoor', 'webcam', 'public', 'traffic']
     },
     // 'normal' or 'panorama'(360°) cam
     model: {type: 'string'},
