@@ -150,7 +150,7 @@ Parameters:
 Example:
 
 ```
-http://localhost:1337/api/v1/cctv/create?location=52.711650,13.889573
+http://localhost:1337/api/v1/cctv/create?lat=52.711650&lng=13.889573
 ```
 
 ## Authentification process
