@@ -14,8 +14,9 @@ module.exports = {
 			
 		} catch (e) {
 			console.error(e);
+			return config;
 		}
-
+		
 		return config;
 	}
 };
