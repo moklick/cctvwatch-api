@@ -2,7 +2,9 @@
 var path = require('path'),
 	config = require(path.resolve(__dirname, 'api', 'services', 'ConfigManager')).getConfig();
 require('sails').lift({
-  hooks: {
-    sockets: false,
-    pubsub: false
-  }});
+	prod: process.env.NODE_ENV || false
+	hooks: {
+		sockets: false,
+		pubsub: false
+	}
+});
