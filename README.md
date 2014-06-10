@@ -44,12 +44,15 @@ In the project folder run:
 $ npm start
 ```
 
-### Start the production server
-In the project folder run:
+### Deployment
+We use [pod](https://github.com/yyx990803/pod) to deploy our application.
+The main steps are:
+```sh
+git remote add deploy cctv@antares.uberspace.de:~/repos/api.git
 ```
-$ npm run production 
-$ npm run stop-server
-$ npm run restart-server    # with 0ms downtime!!!
+To deploy the app:
+```sh
+git push deploy master
 ```
 
 
