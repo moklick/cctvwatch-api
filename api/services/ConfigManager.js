@@ -3,9 +3,9 @@
 module.exports = {
 	getConfig: function() {
 		var path = require('path'),
-			config = require(path.resolve(__dirname, '..', '..', 'package')).config || {};
+			config = require(path.resolve(__dirname, '..', '..', 'package')).config;
 		try {
-			var local = require(path.resolve(__dirname, '..', '..', 'local-config')).config,
+			var local = require(path.resolve(__dirname, '..', '..', 'local-config')).config || {},
 				_ = require('lodash');
 
 			_.forIn(config, function(value, key) {
