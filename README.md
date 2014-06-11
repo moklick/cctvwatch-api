@@ -15,7 +15,7 @@ $ mongo
 ```
 
 ### Configure
-Copy the config-sections that you will edit from ```package.json``` to ```local-config.json``` in order to overwrite the global config with your local settings.
+Edit the settings in the ```.sailsrc``` file.
 Pay particular attention to the following settings:
 - mongodb **user**, **pass**, db **name**, **port**
 - OAuth **hostname**, github **id**, github **secret** and other OAuth providers config
