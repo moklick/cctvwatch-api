@@ -4,7 +4,7 @@ var passport = require('passport'),
     GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
     TwitterStrategy = require('passport-twitter').Strategy,
     path = require("path"),
-    config = require(path.resolve(__dirname, '..', 'api', 'services', 'ConfigManager')).getConfig();
+    config = require('rc')('sails');
 
 
 var verifyHandler = function (token, tokenSecret, profile, done) {
@@ -93,8 +93,9 @@ module.exports = {
                 verifyHandler
             ));
 
-            app.use(passport.initialize());
-            app.use(passport.session());
+            app.use(passport.initialize())
+                .use(passport.session());
+
         }
     }
 

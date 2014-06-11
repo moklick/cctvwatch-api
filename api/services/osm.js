@@ -7,7 +7,7 @@ var request = require('request'),
 	JSONStream = require('JSONStream'),
 	es = require('event-stream'),
 	writeStream = fs.createWriteStream(path.resolve(__dirname, '..', '..', 'data', 'data.json')),
-    config = require(path.resolve(__dirname, 'ConfigManager')).getConfig();
+    config = require('rc')('sails');
 
 var baseURL = 'http://overpass-api.de/',
 	queryURL = 'api/interpreter?data=',
@@ -24,7 +24,6 @@ function writeData(data) {
 	if (isValidData) {
 		// TODO: Explore more fields from the OSM API
 		var entry = {
-				location: [parseFloat(lat.toFixed(6)), parseFloat(lng.toFixed(6))],
 				lat: lat.toFixed(6),
 				lng: lng.toFixed(6),
 				name: data.tags.name,

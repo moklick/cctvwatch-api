@@ -1,10 +1,2 @@
 // Start sails and pass it command line arguments
-var path = require('path'),
-	config = require(path.resolve(__dirname, 'api', 'services', 'ConfigManager')).getConfig();
-require('sails').lift({
-	prod: (process.env.NODE_ENV === 'production'),
-	hooks: {
-		sockets: false,
-		pubsub: false
-	}
-});
+require('sails').lift(require('optimist').argv);

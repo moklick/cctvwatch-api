@@ -12,7 +12,7 @@
  * http://sailsjs.org/#documentation
  */
 var path = require('path'),
-    config = require(path.resolve(__dirname, '..', 'api', 'services', 'ConfigManager')).getConfig();
+    config = require('rc')('sails');
 
 module.exports.connections = {
 

@@ -9,8 +9,7 @@
  * For more information on configuring the session, check out:
  * http://sailsjs.org/#documentation
  */
-var path = require("path"),
-    config = require(path.resolve(__dirname, '..', 'api', 'services', 'ConfigManager')).getConfig();
+var config = require('rc')('sails');
 
 module.exports.session = {
 

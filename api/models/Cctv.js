@@ -21,10 +21,6 @@ module.exports = {
       type: 'float',
       required: true
     },
-    location: {
-      type: 'array',
-      array: [{lat: 'float', lng: 'float'}]
-    },
     note: {type: 'string'},
     // indoor, outdoor or webcam
     type: {
@@ -42,7 +38,7 @@ module.exports = {
     osmID: {type: 'integer'}
   }, 
   beforeValidate: function(values, cb) {
-    values.location = [values.lat, values.lng];
+    values.location = [values.lat.toFixed(6), values.lng.toFixed(6)];
     cb();
   }
 };

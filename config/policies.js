@@ -10,8 +10,7 @@
  * For more information on policies, check out:
  * http://sailsjs.org/#documentation
  */
-var path = require('path'),
-	config = require(path.resolve(__dirname, '..', 'api', 'services', 'ConfigManager')).getConfig(),
+var	config = require('rc')('sails'),
 	authConstrain = (config.auth.enabled === true) ? 'isAuthenticated' : true;
 
 module.exports.policies = {
