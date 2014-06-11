@@ -1,0 +1,5 @@
+npm install
+# delete the local configuration file
+# since we will use the .sailsrc located
+# in our home directory on the server
+rm .sailsrc
