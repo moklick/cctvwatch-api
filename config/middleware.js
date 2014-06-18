@@ -1,6 +1,5 @@
 var passport = require('passport'),
     GitHubStrategy = require('passport-github').Strategy,
-    FacebookStrategy = require('passport-facebook').Strategy,
     GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
     TwitterStrategy = require('passport-twitter').Strategy,
     path = require("path"),
@@ -65,14 +64,6 @@ module.exports = {
                     clientID: config.auth.github_client,
                     clientSecret: config.auth.github_secret,
                     callbackURL: "http://" + config.auth.hostname + "/auth/github/callback"
-                },
-                verifyHandler
-            ));
-
-            passport.use(new FacebookStrategy({
-                    clientID: config.auth.facebook_client,
-                    clientSecret: config.auth.facebook_secret,
-                    callbackURL: "http://" + config.auth.hostname + "/auth/facebook/callback"
                 },
                 verifyHandler
             ));
