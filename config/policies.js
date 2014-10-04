@@ -20,6 +20,7 @@ module.exports.policies = {
   '*': authConstrain,
   'cctv': {
   	'find': true,
+  	'findOne': true,
   	'within': true,
   	'near': true
   },
