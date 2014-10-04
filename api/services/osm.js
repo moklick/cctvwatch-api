@@ -7,11 +7,12 @@ var request = require('request'),
 	JSONStream = require('JSONStream'),
 	es = require('event-stream'),
 	writeStream = fs.createWriteStream(path.resolve(__dirname, '..', '..', 'data', 'data.json')),
-    config = require('rc')('sails');
+    config = require('rc')('sails'),
+    errorEntries = [];
 
 var baseURL = 'http://overpass-api.de/',
 	queryURL = 'api/interpreter?data=',
-	query = '<osm-script output="json"> <union> <query type="node"> <has-kv k="man_made" v="surveillance"/> <bbox-query s="' + config.bbox.lat1 + '" w="' + config.bbox.lon1 + '" n="' + config.bbox.lat2 + '" e="' + config.bbox.lon2 + '"/> </query> <query type="way"> <has-kv k="man_made" v="surveillance"/> <bbox-query s="' + config.bbox.lat1 + '" w="' + config.bbox.lon1 + '" n="' + config.bbox.lat2 + '" e="' + config.bbox.lon2 + '"/> </query> <query type="relation"> <has-kv k="man_made" v="surveillance"/> <bbox-query s="' + config.bbox.lat1 + '" w="' + config.bbox.lon1 + '" n="' + config.bbox.lat2 + '" e="' + config.bbox.lon2 + '"/> </query> </union> <print mode="body"/> <recurse type="down"/> <print mode="skeleton"/> </osm-script>';
+	query = '[out:json][bbox];node[man_made=surveillance];out;&bbox=' + config.bbox.lon1 + ',' + config.bbox.lat1 + ',' + config.bbox.lon2 + ',' + config.bbox.lat2 + '&timeout=1800';
 
 
 function writeData(data) {
@@ -44,7 +45,12 @@ function writeData(data) {
 				return sails.log.error(err);
 			} else if (cctv.length === 0) {
 				Cctv.create(entry, function(err, cctv) {
-				  if (err) return sails.log.error(err);
+
+					if (err) {
+						errorEntries.push(entry);
+						return false; //sails.log.error(err);
+					}
+
 				});
 			}
 		});
@@ -58,6 +64,9 @@ function tap() {
 }
 
 module.exports.fetch = function() {
+ 
+    sails.log.info('Fetching data from: ', baseURL + queryURL + query);
+
 	request({url: baseURL + queryURL + query})
 		// parse interesting elements
 		.pipe(JSONStream.parse('elements.*'))
@@ -69,5 +78,7 @@ module.exports.fetch = function() {
 }
 
 writeStream.on('close', function(){
+	errorEntries = _.uniq(errorEntries);
+	sails.log.info("Validation Errors: ", errorEntries);
 	sails.log.info('OSM data synced !');
 });
