@@ -19,10 +19,10 @@
       "twitter_secret": "SECRET"
     },
     "bbox": {
-      "lat1": 52.2878,
-      "lon1": 12.935,
-      "lat2": 52.7955,
-      "lon2": 13.8448
+      "lat1": 47.239051,
+      "lon1": 4.458630,
+      "lat2": 55.257906,
+      "lon2": 15.708630
     },
     "hooks": {
     	"sockets": false,
