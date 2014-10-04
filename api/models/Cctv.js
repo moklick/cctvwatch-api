@@ -25,7 +25,7 @@ module.exports = {
     // indoor, outdoor or webcam
     type: {
       type: 'string',
-      enum: ['indoor', 'outdoor', 'webcam', 'public', 'traffic']
+     // enum: ['indoor', 'outdoor', 'webcam', 'public', 'traffic','yes','traffic_signals','private','maxspeed','tram','indoor or outdoor','camera','indoor:outdoor','Outdoor/public']
     },
     // 'normal' or 'panorama'(360°) cam
     model: {type: 'string'},
