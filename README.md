@@ -14,6 +14,13 @@ $ mongo
 > db.addUser('cctvAdmin', 'cctvw4tch');
 ```
 
+For mongodb >= 3.0.0 use:
+```
+$ mongo
+> use cctvDb
+> db.createUser({ user : 'cctvAdmin', pwd : 'cctvw4tch', roles : [{ role : 'readWrite', db : 'cctvDb' }]});
+```
+
 ### Configure
 Edit the settings in the ```.sailsrc``` file.
 Pay particular attention to the following settings:
